@@ -13,7 +13,7 @@
         <div class="text-center">
             <h1 class="display-5">Your Cart</h1><br>
         </div>
-        <table class="table mx-auto" style="">
+        <table class="table mx-auto" style="background-color:#181818;">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">Item</th>
@@ -28,7 +28,9 @@
             <tr>
                 <td>{{ item.product }}</td>
                 <td>{{ item.quantity }}
-                    <a  href="{% url 'remove_from_cart' item.product.id %}"><button type="submit" class="btn btn-dark">rem</button></a>
+                    <a href="{% url 'remove_from_cart' item.product.id %}">
+                        <button type="submit" class="btn btn-dark">rem</button>
+                    </a>
 
                 </td>
                 <td>{{ item.product.price }}</td>
@@ -61,9 +63,10 @@
                 data-name="Django Project"
                 data-image=""
                 data-prefill.name="Guest"
-                data-prefill.email="huntpiyush46@example.com"
-                data-prefill.contact="8522861069"
-                data-theme.color="#F37254"
+                data-prefill.email="{{ user.email }}"
+                data-theme.color="#181818"
+                callback_url="https://your-server/callback_url"
+                redirect="True"
         ></script>
         <input type="hidden" custom="Hidden Element" name="hidden">
     </form>

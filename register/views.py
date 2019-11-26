@@ -3,7 +3,6 @@ from .forms import RegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
-
 # Create your views here.
 def register_view(request):
     if request.method == 'POST':

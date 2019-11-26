@@ -17,8 +17,8 @@
 
 <div class="container text-center">
     <div class="jumbotron" style="background:transparent">
-        <table class="table mx-auto" style="">
-            <thead class="thead-dark">
+        <table class="table mx-auto" style="background:#181818;border-top:solid #181818;">
+            <thead class="thead" style="background:#181818;color:white;">
             <tr>
                 <th scope="col">Item</th>
                 <th scope="col">Quantity</th>
@@ -54,9 +54,8 @@
                 data-name="Django Project"
                 data-image=""
                 data-prefill.name="Guest"
-                data-prefill.email="huntpiyush46@example.com"
-                data-prefill.contact="8522861069"
-                data-theme.color="#F37254"
+                data-prefill.email="{{ user.email }}"
+                data-theme.color="#181818"
         ></script>
         <input type="hidden" custom="Hidden Element" name="hidden">
     </form>
