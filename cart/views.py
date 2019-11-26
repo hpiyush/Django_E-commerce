@@ -45,15 +45,12 @@ def add_to_cart(request, item_id):
 # Create your views here.
 @login_required
 def cart_view(request):
-    client = razorpay.Client(auth=("rzp_test_FyUhgWReVhAYTk", "5fu4IEYGM13tzrj82gG3zO30"))
-    client.set_app_details({"title": "DjangoProject", "version": "0.1"})
-
     existing_order = get_user_pending_order(request)
     order = existing_order[0].items.all()
     total_per = [i.product.price * i.quantity for i in order]
     total = sum(total_per)
     if total > 1:
-        client = razorpay.Client(auth=("rzp_test_FyUhgWReVhAYTk", "5fu4IEYGM13tzrj82gG3zO30"))
+        client = razorpay.Client(auth=("rzp_live_QY0VqVNR9qxYFo", "mO5s8vKpN6sP7tdTLpYmjypi"))
         client.set_app_details({"title": "DjangoProject", "version": "0.1"})
         DATA = {
             'amount': float(total * 100),
@@ -108,6 +105,7 @@ def buy_now(request, id):
         'payment_capture': 1,
     }
     returned = client.order.create(data=DATA)
+    print(returned)
     # print(client.order.fetch('items'))
 
     context = {
