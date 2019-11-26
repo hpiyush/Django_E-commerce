@@ -1,0 +1,29 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% endblock content%}
+{% block navbar %}
+{% endblock navbar %}
+
+<div class="container mt-5">
+    <div style="background:transparent !important" class="jumbotron text-center">
+        <h1 class="display-6">{{ user.username }}</h1>
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <p class="lead"><br></p>
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <fieldset class="form-group">
+                {{ u_form|crispy }}
+                {{ p_form|crispy }}
+            </fieldset>
+            <div class="form-group text-center">
+                <button type="submit" value="save" class="btn btn-outline-success">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

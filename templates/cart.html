@@ -1,0 +1,72 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+{% load cart_filters %}
+
+<!--EXTENDING FROM OTER TEMPLATES-->
+{% block content %}
+{% endblock %}
+{% block navbar %}
+{% endblock navbar %}
+
+<div class="container text-center">
+    <div class="jumbotron" style="background:transparent">
+        <div class="text-center">
+            <h1 class="display-5">Your Cart</h1><br>
+        </div>
+        <table class="table mx-auto" style="">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Subtotal</th>
+
+            </tr>
+            </thead>
+            <tbody style="background:white;">
+            {% for item in order %}
+            <tr>
+                <td>{{ item.product }}</td>
+                <td>{{ item.quantity }}
+                    <a  href="{% url 'remove_from_cart' item.product.id %}"><button type="submit" class="btn btn-dark">rem</button></a>
+
+                </td>
+                <td>{{ item.product.price }}</td>
+                <td>{{ item.product.price|multiply:item.quantity }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tbody style="background:white;">
+            <tr>
+                <td><strong>Total</strong></td>
+                <td></td>
+                <td></td>
+                <td><strong>{{ total }}</strong></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="mx-auto text-center">
+    <form action="http://127.0.0.1:8000/products/" method="POST">
+        {% csrf_token %}
+        <script
+                src="https://checkout.razorpay.com/v1/checkout.js"
+                data-key="rzp_test_FyUhgWReVhAYTk"
+                data-amount="{{ razor_price }}"
+                data-currency="INR"
+                data-order_id="{{ order_id }}"
+                data-buttontext="Pay with Razorpay"
+                data-name="Django Project"
+                data-image=""
+                data-prefill.name="Guest"
+                data-prefill.email="huntpiyush46@example.com"
+                data-prefill.contact="8522861069"
+                data-theme.color="#F37254"
+        ></script>
+        <input type="hidden" custom="Hidden Element" name="hidden">
+    </form>
+</div>
+</body>
+</html>

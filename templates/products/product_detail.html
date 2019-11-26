@@ -1,0 +1,38 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+
+{% block content %}
+{% endblock content %}
+
+{% block navbar %}
+{% endblock navbar %}
+<div class="container">
+    <div class="jumbotron text-center" style="background:transparent; margin-top:20px;">
+        <img src="{{ object.image.url }}" style="height:200px; margin-left:-15px;"/>
+        <br>
+        <div>
+            <h3><br><strong>{{ object.title }}</strong></h3>
+            <p class="mx-auto" style="max-width:600px">{{ object.description }} Lorem ipsum dolor sit amet, consectetur
+                adipisicing elit. Animi aspernatur commodi dignissimos illum natus nihil officiis quam qui quos
+                voluptate!</p>
+            <h6><strong>INR {{ object.price }}</strong></h6><br>
+        </div>
+        <div style="background:transparent;">
+            <ul class="list-group list-group-flush" style="background:transparent;">
+                <li class="list-group-item text-center" style="background:black !important;">
+                    <a href="{% url 'buy_now' product.id %}" class="btn btn-dark btn-lg active text-center"
+                       style="font-size:15px;" role="button"
+                       aria-pressed="true"> Buy Now </a>
+                    <br>
+                    <a href="{% url 'add_to_cart' product.id %}"
+                       class="btn btn-secondary btn-lg active text-center"
+                       style="font-size:15px;"
+                       role="button"
+                       aria-pressed="true"> Add to cart</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
