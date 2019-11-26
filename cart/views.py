@@ -84,6 +84,7 @@ def remove_from_cart(request, id):
     order_item.save()
     if order_item.quantity < 1:
         CartItem.objects.filter(product=product).delete()
+        return redirect(reverse(products_view))
 
     return redirect(reverse(cart_view))
 
