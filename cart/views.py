@@ -99,7 +99,7 @@ def remove_from_cart(request, id):
 @login_required
 def buy_now(request, id):
     item = Product.objects.filter(id=id).first()
-    client = razorpay.Client(auth=("rzp_test_FyUhgWReVhAYTk", "5fu4IEYGM13tzrj82gG3zO30"))
+    client = razorpay.Client(auth=("rzp_live_QY0VqVNR9qxYFo", "mO5s8vKpN6sP7tdTLpYmjypi"))
     client.set_app_details({"title": "DjangoProject", "version": "0.1"})
     DATA = {
         'amount': float(item.price * 100),
