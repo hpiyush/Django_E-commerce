@@ -6,6 +6,8 @@ from django.shortcuts import (
     reverse, get_object_or_404
 )
 from django.contrib import messages
+from razorpay.errors import BadRequestError
+
 from .models import CartItem, Order
 from products.models import Product
 from products.views import products_view
@@ -77,15 +79,15 @@ def get_user_pending_order(request):
 
 @login_required
 def remove_from_cart(request, id):
+    product = Product.objects.filter(id=id).first()
+    order_item = CartItem.objects.filter(product=product).first()
+    order_item.quantity -= 1
+    order_item.save()
+    if order_item.quantity < 1:
+        CartItem.objects.filter(product=product).delete()
     try:
-        product = Product.objects.filter(id=id).first()
-        order_item = CartItem.objects.filter(product=product).first()
-        order_item.quantity -= 1
-        order_item.save()
-        if order_item.quantity < 1:
-            CartItem.objects.filter(product=product).delete()
         return redirect(reverse(cart_view))
-    except:
+    except BadRequestError:
         return redirect(reverse(products_view))
 
 
