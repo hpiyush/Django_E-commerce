@@ -77,16 +77,16 @@ def get_user_pending_order(request):
 
 @login_required
 def remove_from_cart(request, id):
-    print(request, id)
-    product = Product.objects.filter(id=id).first()
-    order_item = CartItem.objects.filter(product=product).first()
-    order_item.quantity -= 1
-    order_item.save()
-    if order_item.quantity < 1:
-        CartItem.objects.filter(product=product).delete()
+    try:
+        product = Product.objects.filter(id=id).first()
+        order_item = CartItem.objects.filter(product=product).first()
+        order_item.quantity -= 1
+        order_item.save()
+        if order_item.quantity < 1:
+            CartItem.objects.filter(product=product).delete()
+        return redirect(reverse(cart_view))
+    except:
         return redirect(reverse(products_view))
-
-    return redirect(reverse(cart_view))
 
 
 @login_required
