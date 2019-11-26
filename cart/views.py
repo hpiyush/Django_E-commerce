@@ -52,22 +52,27 @@ def cart_view(request):
     order = existing_order[0].items.all()
     total_per = [i.product.price * i.quantity for i in order]
     total = sum(total_per)
+    if total > 1:
+        client = razorpay.Client(auth=("rzp_test_FyUhgWReVhAYTk", "5fu4IEYGM13tzrj82gG3zO30"))
+        client.set_app_details({"title": "DjangoProject", "version": "0.1"})
+        DATA = {
+            'amount': float(total * 100),
+            'currency': 'INR',
+            'receipt': generate_order_id(),
+            'payment_capture': 1,
+        }
+        returned = client.order.create(data=DATA)
 
-    DATA = {
-        'amount': float(total * 100),
-        'currency': 'INR',
-        'receipt': generate_order_id(),
-        'payment_capture': 1,
-    }
-    returned = client.order.create(data=DATA)
+        context = {
+            'order': order,
+            'order_id': returned['id'],
+            'total': total,
+            'razor_price': total * 100,
+        }
+        return render(request, 'cart.html', context)
+    else:
+        return redirect(reverse(products_view))
 
-    context = {
-        'order': order,
-        'order_id': returned['id'],
-        'total': total,
-        'razor_price': total * 100,
-    }
-    return render(request, 'cart.html', context)
 
 
 def get_user_pending_order(request):
