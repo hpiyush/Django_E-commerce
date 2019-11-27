@@ -4,9 +4,7 @@ from products.models import Product
 # Create your models here.
 class CartItem(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    is_ordered = models.BooleanField(default=False)
     quantity = models.IntegerField(default=0)
-    date = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.product)

@@ -49,7 +49,7 @@ def profile(request):
         'u_form': u_form,
         'p_form': p_form,
     }
-    return render(request, 'profile.html', context)
+    return render(request, 'user/profile.html', context)
 
 
 @login_required

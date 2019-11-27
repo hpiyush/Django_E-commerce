@@ -27,8 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['chowebsite.herokuapp.com']
 
-# Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -41,7 +39,6 @@ INSTALLED_APPS = [
     'posts',
     'cart',
     'crispy_forms',
-
 ]
 
 MIDDLEWARE = [
@@ -115,11 +112,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-# if DEBUG:
-#     STATIC_ROOT = "/home/cho/devpy/jango/mywebsite/static"
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),

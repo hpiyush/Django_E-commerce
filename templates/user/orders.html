@@ -1,0 +1,49 @@
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% endblock content%}
+{% block navbar %}
+{% endblock navbar %}
+
+{% if make_list %}
+<div class="container mt-3">
+    <div style="background:transparent !important" class="text-center">
+        <h1 class="display-6">{{ user.username }}</h1><br>
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div>
+            <br>
+            <h3 class="text-center">Your orders</h3><br>
+        </div>
+    </div>
+    {% for item in make_list %}
+    <div class="card mx-auto text-center" style="background:#181818;padding-bottom:15px;max-width:80%">
+        <div class="card-header  text-center ">
+            Order ID - {{ item.0.ref_code }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title"> Item name - {{ item.1}}</h5>
+            <p class="card-text">Ordered on - {{ item.0.date_ordered }}</p>
+            <p class="card-text">Status - </p>
+        </div>
+    </div>
+    <div><br></div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="container mt-3">
+    <div style="background:transparent !important" class="text-center">
+        <h1 class="display-6">{{ user.username }}</h1><br>
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div>
+            <br>
+            <h3 class="text-center">Your orders</h3><br>
+        </div>
+    </div>
+    <h1 class="text-center">No Orders</h1>
+    {% endif %}
+</div>
+
+</body>
+</html>

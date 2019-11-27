@@ -6,6 +6,7 @@ from django.shortcuts import (
     reverse, get_object_or_404
 )
 from django.contrib import messages
+from django.views.generic import ListView
 from razorpay.errors import BadRequestError
 
 from .models import CartItem, Order
@@ -29,16 +30,16 @@ def add_to_cart(request, item_id):
     user_profile = get_object_or_404(Profile, user=request.user)
     product = Product.objects.filter(id=item_id).first()
     order_item, status = CartItem.objects.get_or_create(product=product)
-    print(order_item)
     order_item.quantity += 1
     order_item.save()
+
     user_order, status = Order.objects.get_or_create(owner=user_profile.user, is_ordered=False)
     user_order.items.add(order_item)
     if status:
         user_order.ref_code = generate_order_id()
         user_order.ref_code = generate_order_id()
         user_order.save()
-    messages.info(request, "Item added to cart")
+    messages.warning(request, 'Item added to cart')
     return redirect(reverse(products_view))
 
 
@@ -59,16 +60,31 @@ def cart_view(request):
             'payment_capture': 1,
         }
         returned = client.order.create(data=DATA)
-
+        print(returned)
         context = {
             'order': order,
             'order_id': returned['id'],
             'total': total,
             'razor_price': total * 100,
         }
-        return render(request, 'cart.html', context)
+        user_profile = get_object_or_404(Profile, user=request.user)
+        Order.objects.get_or_create(owner=user_profile.user, is_ordered=True)
+        return render(request, 'products/cart.html', context)
     else:
+        messages.warning(request, 'No items in cart. Add items to view cart.')
         return redirect(reverse(products_view))
+
+
+@login_required
+def all_orders(request):
+    orders = Order.objects.filter(owner=request.user, is_ordered=False)
+    all_items = [item.items.all() for item in orders]
+    make_list = [[i, j] for i in orders for j in all_items[0]]
+
+    context = {
+        'make_list': make_list,
+    }
+    return render(request, 'user/orders.html', context)
 
 
 
@@ -78,6 +94,11 @@ def get_user_pending_order(request):
         return order
     return 0
 
+def get_user_order(request):
+    order = Order.objects.filter(owner=request.user, is_ordered=True)
+    if order.exists():
+        return order
+    return 0
 
 @login_required
 def remove_from_cart(request, id):
@@ -105,9 +126,6 @@ def buy_now(request, id):
         'payment_capture': 1,
     }
     returned = client.order.create(data=DATA)
-    print(returned)
-    # print(client.order.fetch('items'))
-
     context = {
         'item': item,
         'order_id': returned['id'],
