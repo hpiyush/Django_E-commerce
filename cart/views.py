@@ -110,6 +110,7 @@ def all_orders(request, *args, **kwargs):
         'make_list': make_list,
         'args': args,
         'kwargs': kwargs,
+        'request': request,
     }
     return render(request, 'user/orders.html', context)
 
