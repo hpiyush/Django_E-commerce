@@ -18,6 +18,7 @@ from register.models import Profile
 from datetime import date
 import datetime
 from django.contrib.auth.decorators import login_required
+import json
 
 
 def generate_order_id():
@@ -106,7 +107,7 @@ def all_orders(request, *args, **kwargs):
     all_items = [item.items.all() for item in orders]
     make_list = [[i, j] for i in orders for j in all_items[0]]
 
-    req = ('raw data body: "%s"' %request.body)
+    req = json.loads(request.body)
 
     context = {
         'make_list': make_list,
