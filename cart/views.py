@@ -107,7 +107,7 @@ def all_orders(request, *args, **kwargs):
     all_items = [item.items.all() for item in orders]
     make_list = [[i, j] for i in orders for j in all_items[0]]
 
-    req = json.loads(request.body)
+    req = json.loads(request.POST['event'])
 
     context = {
         'make_list': make_list,
