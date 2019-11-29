@@ -1,0 +1,12 @@
+.razorpay-payment-button{
+height:50px;
+background-color:black;
+border:2px solid green;
+color: green;
+-webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.razorpay-payment-button:hover {
+  background-color: green; /* Green */
+  color: white;
+}

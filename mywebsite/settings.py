@@ -25,7 +25,7 @@ SECRET_KEY = '13d581ccb502f298833ce40c40a7143fdc0fb5cfa4a87636'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['chowebsite.herokuapp.com']
+ALLOWED_HOSTS = ['chowebsite.herokuapp.com' , '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

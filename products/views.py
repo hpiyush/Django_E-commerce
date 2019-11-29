@@ -25,6 +25,7 @@ def products_view(request):
 
 class ProductDetailView(DetailView):
     model = Product
+    template = 'products/products.html'
 
 # def order_view(request):
 #

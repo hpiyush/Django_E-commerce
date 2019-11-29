@@ -1,3 +1,4 @@
+import razorpay.resources.payment as payment
 import razorpay
 import random
 import string
@@ -74,15 +75,40 @@ def cart_view(request):
         messages.warning(request, 'No items in cart. Add items to view cart.')
         return redirect(reverse(products_view))
 
+@login_required
+def buy_now(request, id, *args, **kwargs):
+    item = Product.objects.filter(id=id).first()
+    client = razorpay.Client(auth=("rzp_live_QY0VqVNR9qxYFo", "mO5s8vKpN6sP7tdTLpYmjypi"))
+    client.set_app_details({"title": "Django-Project", "version": "0.1"})
+    DATA = {
+        'amount': item.price * 100,
+        'currency': 'INR',
+        'receipt': generate_order_id(),
+        'payment_capture': 1,
+    }
+    returned = client.order.create(data=DATA)
+
+    context = {
+        'item': item,
+        'order_id': returned['id'],
+        'razor_price': item.price * 100,
+        'args': args,
+        'kwargs':kwargs,
+    }
+
+    return render(request, 'products/buy_now.html', context)
+
 
 @login_required
-def all_orders(request):
+def all_orders(request, *args, **kwargs):
     orders = Order.objects.filter(owner=request.user, is_ordered=False)
     all_items = [item.items.all() for item in orders]
     make_list = [[i, j] for i in orders for j in all_items[0]]
 
     context = {
         'make_list': make_list,
+        'args': args,
+        'kwargs': kwargs,
     }
     return render(request, 'user/orders.html', context)
 
@@ -112,23 +138,3 @@ def remove_from_cart(request, id):
         return redirect(reverse(cart_view))
     except BadRequestError:
         return redirect(reverse(products_view))
-
-
-@login_required
-def buy_now(request, id):
-    item = Product.objects.filter(id=id).first()
-    client = razorpay.Client(auth=("rzp_live_QY0VqVNR9qxYFo", "mO5s8vKpN6sP7tdTLpYmjypi"))
-    client.set_app_details({"title": "DjangoProject", "version": "0.1"})
-    DATA = {
-        'amount': float(item.price * 100),
-        'currency': 'INR',
-        'receipt': generate_order_id(),
-        'payment_capture': 1,
-    }
-    returned = client.order.create(data=DATA)
-    context = {
-        'item': item,
-        'order_id': returned['id'],
-        'razor_price': item.price * 100
-    }
-    return render(request, 'products/buy_now.html', context)

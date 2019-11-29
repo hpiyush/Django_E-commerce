@@ -14,6 +14,7 @@ from posts.views import (
 )
 from products.views import products_view, ProductDetailView
 from register.views import register_view, profile, preference
+from hooks.views import test_hook
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -51,6 +52,7 @@ urlpatterns = [
     path('posts/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
     path('posts/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
 
+    path('test_hook/', test_hook, name='test_hook')
 ]
 
 if settings.DEBUG:

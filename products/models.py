@@ -3,7 +3,7 @@ from PIL import Image
 
 # Create your models here.
 class Product(models.Model):
-    title = models.CharField(max_length=12, default='untitnled', blank=False, null=False)
+    title = models.CharField(max_length=50, default='untitled', blank=False, null=False)
     description = models.TextField(max_length=5000)
     price = models.FloatField(max_length=12)
     availability = models.IntegerField()
