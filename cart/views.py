@@ -94,6 +94,7 @@ def buy_now(request, id, *args, **kwargs):
         'razor_price': item.price * 100,
         'args': args,
         'kwargs':kwargs,
+        'request': request,
     }
 
     return render(request, 'products/buy_now.html', context)
