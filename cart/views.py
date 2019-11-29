@@ -105,12 +105,15 @@ def all_orders(request, *args, **kwargs):
     orders = Order.objects.filter(owner=request.user, is_ordered=False)
     all_items = [item.items.all() for item in orders]
     make_list = [[i, j] for i in orders for j in all_items[0]]
+    if request.is_ajax():
+        if request.method == "POST":
+            req = ('raw data body: "%s"' %request.body)
 
     context = {
         'make_list': make_list,
         'args': args,
         'kwargs': kwargs,
-        'request': request,
+        'request': req,
     }
     return render(request, 'user/orders.html', context)
 
