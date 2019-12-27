@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path
-from cart.views import cart_view, add_to_cart, buy_now, remove_from_cart, all_orders
+from cart.views import cart_view, add_to_cart, buy_now, remove_from_cart, all_orders, order_success
 from homepage.views import home_view
 from posts.views import (
     PostListView,
@@ -14,7 +14,7 @@ from posts.views import (
 )
 from products.views import products_view, ProductDetailView
 from register.views import register_view, profile, preference
-from hooks.views import test_hook
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,6 +24,7 @@ urlpatterns = [
     # Cart / Order / Buy now
     path('cart/', cart_view, name='cart'),
     path('orders/', all_orders, name='orders'),
+    path('order_event/', order_success, name='order_event'),
 
     path('cart/<int:item_id>/', add_to_cart, name='add_to_cart'),
     path('cart/remove/<int:id>/', remove_from_cart, name='remove_from_cart'),
@@ -52,7 +53,6 @@ urlpatterns = [
     path('posts/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
     path('posts/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
 
-    path('test_hook/', test_hook, name='test_hook')
 ]
 
 if settings.DEBUG:
