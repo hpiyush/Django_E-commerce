@@ -1,16 +1,16 @@
 import razorpay
 from django.shortcuts import (
     render, redirect,
-    reverse, get_object_or_404
+    reverse
 )
 from django.contrib import messages
-from razorpay.errors import BadRequestError
 from products.models import Product
 from products.views import products_view
-from register.models import Profile
 from django.contrib.auth.decorators import login_required
 from .miscviews import *
 from .models import CartItem, Order
+from django.views.decorators.csrf import csrf_exempt
+
 
 
 @login_required
@@ -109,7 +109,7 @@ def buy_now(request, id):
     }
     return render(request, 'products/buy_now.html', context)
 
-
+@csrf_exempt
 @login_required
 def order_success(request):
     if request.method == 'POST':
