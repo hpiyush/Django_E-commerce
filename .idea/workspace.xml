@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="987db590-b635-44ff-8a9a-750fced43411" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/media/profile_pics/typing-monkey.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/index.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/shoppingcart-yellow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/typing-monkey.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static_cdn/images/typing-monkey.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/cart/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style0.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style0.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_cdn/css/style0.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_cdn/css/style0.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,22 +47,22 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates/password" />
-      <recent name="$PROJECT_DIR$/static/images" />
-      <recent name="$PROJECT_DIR$/media" />
-      <recent name="$PROJECT_DIR$/cart" />
-      <recent name="$PROJECT_DIR$/templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/images" />
+      <recent name="$PROJECT_DIR$/media/profile_pics" />
       <recent name="$PROJECT_DIR$/templates/user" />
       <recent name="$PROJECT_DIR$/templates/products" />
       <recent name="$PROJECT_DIR$/templates/password" />
-      <recent name="$PROJECT_DIR$/products/templates" />
-      <recent name="$PROJECT_DIR$/templates/posts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/images" />
+      <recent name="$PROJECT_DIR$/templates/password" />
+      <recent name="$PROJECT_DIR$/media" />
+      <recent name="$PROJECT_DIR$/cart" />
+      <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -104,14 +114,14 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="214" width="800" height="677" key="#Notifications/67.27.1853.1053@67.27.1853.1053" timestamp="1575459362739" />
-    <state x="1013" y="311" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577023390474">
+    <state x="1013" y="311" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577606512408">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="1013" y="311" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1577023390474" />
-    <state x="519" y="172" key="SettingsEditor" timestamp="1576246877220">
+    <state x="1013" y="311" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1577606512408" />
+    <state x="519" y="172" key="SettingsEditor" timestamp="1577627457836">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="519" y="172" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1576246877220" />
+    <state x="519" y="172" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1577627457836" />
     <state x="631" y="272" width="725" height="560" key="find.popup" timestamp="1576246918937">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>

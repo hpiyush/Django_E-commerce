@@ -6,7 +6,34 @@ color: green;
 -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
 }
+
 .razorpay-payment-button:hover {
   background-color: green; /* Green */
   color: white;
+}
+
+#home-1-button{
+    color:green;
+    background:black;
+    border:solid green 2px;
+    height:56px; width:180px;
+    font-size:17px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+     transition-duration: 0.4s;
+}
+
+#home-1-button:hover {
+    transform: scale(1.07);
+}
+
+#home-border-2 {
+  border:solid black 2px; /* Green */
+  margin:8px;
+  max-width:350px;"
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+}
+
+#home-border-2:hover {
+  transform: scale(1.05); /* Green */
 }

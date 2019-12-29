@@ -19,6 +19,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'posts' %}">Posts</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'cart' %}">Cart</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                    aria-haspopup="true" aria-expanded="false">
@@ -26,7 +29,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
-                    <a class="dropdown-item" href="{% url 'cart' %}">Cart</a>
+                    <a class="dropdown-item" href="#">Settings</a>
                     <a class="dropdown-item" href="{% url 'orders' %}">Orders</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
