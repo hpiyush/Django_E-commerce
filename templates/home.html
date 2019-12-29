@@ -1,12 +1,13 @@
+{% load static %}
 {% include 'base.html' %}
 {% include 'navbar.html' %}
-{% load static %}
+
 
 <!--EXTENDING FROM OTER TEMPLATES-->
-{% block content %}
-{% endblock %}
-{% block navbar %}
-{% endblock navbar %}
+<!--{% block content %}-->
+<!--{% endblock %}-->
+<!--{% block navbar %}-->
+<!--{% endblock navbar %}-->
 <div class="wrapper">
     <div class="container">
         <div class="row mt-5 pt-3 mb-3 pb-">
@@ -18,7 +19,7 @@
                     doloribus ea enim eos est facere modi reiciendis sed veniam.
                 </h5>
                 <br>
-                <button id="home-1-button"><strong>Shop now!</strong></button>
+                <button id="home-1-button">Shop now!</button>
             </div>
             <div class="col-md-5 text-center">
                 <h2>Stitching made easy.</h2>
@@ -36,30 +37,44 @@
         <div class="container">
             <div class="row mx-auto mt-5 pt-5 mb-5 pb-5">
                 <div class="col-sm-4" id="home-border-2">
-                    <h1>Lorem ipsum dolor sit amet.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque debitis ea, esse harum ipsa
-                        magni maxime natus perspiciatis ullam voluptas voluptate. Animi, doloribus error iusto qui
-                        quibusdam suscipit voluptas. At nisi nostrum quod voluptatem! Adipisci alias explicabo harum
-                        ipsa ipsum magnam nisi odit. Eos laudantium natus quae quos tenetur?</p>
+                    <div id="home-2-image">
+                        <img src="{% static 'images/index.jpeg' %}">
+                    </div>
+                    <div>
+                        <h4>Lorem ipsum dolor sit amet.</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolores ducimus fugiat id iure
+                            modi nemo possimus quod sunt totam! Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Numquam, ratione!</p>
+                    </div>
                 </div>
                 <div class="col-sm-4" id="home-border-2">
-                    <h1>Lorem ipsum dolor sit amet.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque debitis ea, esse harum ipsa
-                        magni maxime natus perspiciatis ullam voluptas voluptate. Animi, doloribus error iusto qui
-                        quibusdam suscipit voluptas. At nisi nostrum quod voluptatem! Adipisci alias explicabo harum
-                        ipsa ipsum magnam nisi odit. Eos laudantium natus quae quos tenetur?</p>
+                    <div id="home-2-image">
+                        <img src="{% static 'images/index.jpeg' %}">
+                    </div>
+                    <div>
+                        <h4>Lorem ipsum dolor sit amet.</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid error, eum expedita facere
+                            itaque iure laboriosam maxime quis recusandae velit. Lorem ipsum dolor sit amet, consectetur
+                            adipisicing elit. Ipsam, minima.</p>
+                    </div>
                 </div>
                 <div class="col-sm-4" id="home-border-2">
-                    <h1>Lorem ipsum dolor sit amet.</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad atque debitis ea, esse harum ipsa
-                        magni maxime natus perspiciatis ullam voluptas voluptate. Animi, doloribus error iusto qui
-                        quibusdam suscipit voluptas. At nisi nostrum quod voluptatem! Adipisci alias explicabo harum
-                        ipsa ipsum magnam nisi odit. Eos laudantium natus quae quos tenetur?</p>
+                    <div id="home-2-image">
+                        <img src="{% static 'images/index.jpeg' %}">
+                    </div>
+                    <div>
+                        <h4>Lorem ipsum dolor sit amet.</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ducimus exercitationem
+                            iusto labore maiores necessitatibus quidem quo voluptates. Error, vitae?Lorem ipsum dolor
+                            sit amet, consectetur adipisicing elit. Esse, placeat!</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 </div>
+
+{% include 'footer.html' %}
 </body>
 </html>
