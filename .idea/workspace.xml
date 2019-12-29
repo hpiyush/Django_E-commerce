@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="987db590-b635-44ff-8a9a-750fced43411" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/media/profile_pics/typing-monkey.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/index.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/shoppingcart-yellow.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/typing-monkey.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_cdn/images/typing-monkey.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style0.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style0.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_cdn/css/style0.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_cdn/css/style0.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/navbar.html" afterDir="false" />
-    </list>
+    <list default="true" id="987db590-b635-44ff-8a9a-750fced43411" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
