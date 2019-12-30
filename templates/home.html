@@ -20,6 +20,7 @@
                 </h5>
                 <br>
                 <button id="home-1-button">Shop now!</button>
+                <div><br></div>
             </div>
             <div class="col-md-5 text-center">
                 <h2>Stitching made easy.</h2>
@@ -34,47 +35,75 @@
     </div>
 
     <div style="width:100%;background:white;color:black;">
-        <div class="container">
-            <div class="row mx-auto mt-5 pt-5 mb-5 pb-5">
-                <div class="col-sm-4" id="home-border-2">
-                    <div id="home-2-image">
-                        <img src="{% static 'images/index.jpeg' %}">
-                    </div>
-                    <div>
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolores ducimus fugiat id iure
-                            modi nemo possimus quod sunt totam! Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit. Numquam, ratione!</p>
-                    </div>
+        <div class="mx-auto text-center container-home-2" style="display:flex; align-items:center">
+            <div class="row mx-auto mt-5 pt-5 mb-5 pb-5" style="padding:20px;">
+                <div class="mx-auto col-sm-12 col-md-6 col-lg-4">
+                    <a class="noDecoration" href="#">
+                        <div class="container" id="home-border-2">
+                            <div id="home-2-image">
+                                <img src="{% static 'images/index.jpeg' %}">
+                            </div>
+                            <div>
+                                <h4>Lorem ipsum dolor sit amet.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias enim, error
+                                    iste
+                                    minus quos.</p>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-outline-success"
+                                        style="width:40%; min-height:20%;">View now!
+                                </button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-sm-4" id="home-border-2">
-                    <div id="home-2-image">
-                        <img src="{% static 'images/index.jpeg' %}">
-                    </div>
-                    <div>
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid error, eum expedita facere
-                            itaque iure laboriosam maxime quis recusandae velit. Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit. Ipsam, minima.</p>
-                    </div>
+                <div class="mx-auto col-sm-12 col-md-6 col-lg-4">
+                    <a class="noDecoration" href="#">
+                        <div class="container" id="home-border-2">
+                            <div id="home-2-image">
+                                <img src="{% static 'images/index.jpeg' %}">
+                            </div>
+                            <div>
+                                <h4>Lorem ipsum dolor sit amet.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias enim, error
+                                    iste
+                                    minus quos.</p>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-outline-success"
+                                        style="width:40%; min-height:20%;">View now!
+                                </button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-                <div class="col-sm-4" id="home-border-2">
-                    <div id="home-2-image">
-                        <img src="{% static 'images/index.jpeg' %}">
-                    </div>
-                    <div>
-                        <h4>Lorem ipsum dolor sit amet.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ducimus exercitationem
-                            iusto labore maiores necessitatibus quidem quo voluptates. Error, vitae?Lorem ipsum dolor
-                            sit amet, consectetur adipisicing elit. Esse, placeat!</p>
-                    </div>
+                <div class="mx-auto col-sm-12 col-md-6 col-lg-4">
+                    <a class="noDecoration" href="#">
+                        <div class="container" id="home-border-2">
+                            <div id="home-2-image">
+                                <img src="{% static 'images/index.jpeg' %}">
+                            </div>
+                            <div>
+                                <h4>Lorem ipsum dolor sit amet.</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias enim, error
+                                    iste
+                                    minus quos.</p>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-outline-success"
+                                        style="width:40%; min-height:20%;">View now!
+                                </button>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-
 </div>
-
-{% include 'footer.html' %}
+<!--Footer-->
+<div>
+    {% include 'footer.html' %}
+</div>
 </body>
 </html>
