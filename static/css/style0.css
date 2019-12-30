@@ -19,7 +19,7 @@
 }
 
 .container-home-2{
-    width:85%;
+    width:98%;
 }
 
 #home-1-button{
@@ -42,8 +42,6 @@
 #home-border-2 {
     text-decoration: none !important;
     border:solid black 2px; /* Green */
-    padding: 20px;
-    max-width:90%;
     margin: 10px auto;
     padding: 20px;
     -webkit-transition-duration: 0.3s; /* Safari */
