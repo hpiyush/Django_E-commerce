@@ -1,12 +1,7 @@
-.body{
-    background: black;
-    color: white;
-    font-family: "Niramit" !important;
-}
-
-nav{
-    background: black;
-    color: white;
+.noDecoration{
+    text-decoration: none !important;
+    all: unset;
+    color: black !important;
 }
 
 .razorpay-payment-button{
@@ -21,6 +16,10 @@ nav{
 .razorpay-payment-button:hover {
     background-color: green; /* Green */
     color: white;
+}
+
+.container-home-2{
+    width:85%;
 }
 
 #home-1-button{
@@ -41,25 +40,30 @@ nav{
 }
 
 #home-border-2 {
+    text-decoration: none !important;
     border:solid black 2px; /* Green */
-    margin:8px;
-    max-width:350px;"
+    padding: 20px;
+    max-width:90%;
+    margin: 10px auto;
+    padding: 20px;
     -webkit-transition-duration: 0.3s; /* Safari */
     transition-duration: 0.3s;
 }
 
 #home-border-2:hover {
+    text-decoration: none !important;
     border:solid green 2px;
     transform: scale(1.05); /* Green */
 }
 
-.footer{
-    background: white;
-    color: black;
+footer{
+    background: black;
+    color: white;
 }
 
-#home-2-image{
-    max-length: 200px;
-    width: 200px;
-    margin-top: 15px;
+img{
+    max-width:100%;
+    display: block;
+    margin:auto;
+    padding:auto;
 }
