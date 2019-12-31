@@ -1,13 +1,11 @@
-{% csrf_token %}
-
+{% load static %}
 {% include 'base.html' %}
 {% include 'navbar.html' %}
-
-{% block content %}
-{% endblock content %}
-
-{% block navbar %}
-{% endblock navbar %}
+<!--EXTENDING FROM OTER TEMPLATES-->
+<!--{% block content %}-->
+<!--{% endblock %}-->
+<!--{% block navbar %}-->
+<!--{% endblock navbar %}-->
 <div class="wrapper">
     {% if messages %}
     {% for message in messages %}
@@ -19,8 +17,16 @@
     <div class="main-content">
         <div class="jumbotron text-center" style="background:transparent;">
             <div class="text-center">
-                <h1 class="display-4">All Products</h1>
+                <h1 class="display-4">All {{ filter }}</h1>
+                {% if filter == "Books" %}
+                <p class="lead">Choose from a range of Books</p>
+                {% elif filter == "Bio-hacks" %}
+                <p class="lead">Choose from a range of Bio-hacks</p>
+                {% elif filter == "Clothes" %}
+                <p class="lead">Choose from a range of selected fashion</p>
+                {% else %}
                 <p class="lead">Choose from a range of products</p>
+                {% endif %}
             </div>
             <div class="container-fluid">
                 <div class="row">
@@ -67,7 +73,9 @@
         </div>
     </div>
 </div>
-
-
+<!--Footer-->
+<div>
+    {% include 'footer.html' %}
+</div>
 </body>
 </html>
