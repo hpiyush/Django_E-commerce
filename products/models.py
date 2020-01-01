@@ -18,6 +18,7 @@ class Product(models.Model):
     catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, blank=True, null=True)
     image = models.ImageField(default='default.jpeg', upload_to='product_pics')
     available = models.IntegerField(default=10)
+    offer = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -29,6 +30,5 @@ class Product(models.Model):
 
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)
-
             img.thumbnail(output_size)
             img.save(self.image.path)
