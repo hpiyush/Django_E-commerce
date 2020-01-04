@@ -1,0 +1,127 @@
+{% csrf_token %}
+{% include 'base.html' %}
+{% include 'navbar.html' %}
+
+<!--{% block content %}-->
+<!--{% endblock content %}-->
+<!--{% block navbar %}-->
+<!--{% endblock navbar %}-->
+
+<div class="wrapper">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="text-center alert alert-info">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div class="main-content">
+        {% if products_queryset %}
+        <div class="jumbotron text-center" style="background:transparent;">
+            <div class="text-center">
+                <h3 class="display-4">All Products related to {{ query }}</h3>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    {% for product in products_queryset %}
+                    <div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 col-xl-3">
+                        <div class="card mx-auto" style="background:transparent;">
+                            <a style="color:white;text-decoration:none;"
+                               href="{% url 'product-detail' product.id %}">
+                                <img src="{{ product.image.url }}" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <h4 class="card-title"><a style="color:white;text-decoration:none;"
+                                                          href="{% url 'product-detail' product.id %}">
+                                    {{ product.title }} </a>
+
+                                </h4>
+                                <!--                            <p class="card-text">{{ product.description }}</p>-->
+                                <p class="card-text">INR {{ product.price }}</p>
+                                <div style="background:transparent;">
+                                    <ul class="list-group list-group-flush" style="background:transparent;">
+                                        <li class="list-group-item text-center" style="background:black !important;">
+                                            <a href="{% url 'buy_now' product.id %}"
+                                               class="btn btn-dark btn-lg active text-center"
+                                               style="font-size:15px;" role="button"
+                                               aria-pressed="true"> Buy Now
+                                            </a>
+                                            <div style="list-style-type:none"><br></div>
+                                            <a href="{% url 'add_to_cart' product.id %}" s
+                                               class="btn btn-secondary btn-lg active text-center"
+                                               style="font-size:15px;"
+                                               role="button"
+                                               aria-pressed="true">Add to cart
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="jumbotron text-center" style="background:transparent;">
+            <div class="text-center">
+                <h3>No Products related to "{{ query }}"</h3>
+            </div>
+        </div>
+        {% endif %}
+        {% if posts_queryset %}
+        <div class="jumbotron text-center" style="background:transparent;">
+            <div class="text-center">
+                <h3 class="display-4">All Products related to {{ query }}</h3>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    {% for product in posts_queryset %}
+                    <div class="col-md-4 col-lg-3 col-sm-6 col-xs-12 col-xl-3">
+                        <div class="card mx-auto" style="background:transparent;">
+                            <a style="color:white;text-decoration:none;"
+                               href="{% url 'product-detail' product.id %}">
+                                <img src="{{ product.image.url }}" class="card-img-top">
+                            </a>
+                            <div class="card-body">
+                                <h4 class="card-title"><a style="color:white;text-decoration:none;"
+                                                          href="{% url 'product-detail' product.id %}">
+                                    {{ product.title }} </a>
+
+                                </h4>
+                                <!--                            <p class="card-text">{{ product.description }}</p>-->
+                                <p class="card-text">INR {{ product.content }}</p>
+                                <div style="background:transparent;">
+
+                                    <ul class="list-group list-group-flush" style="background:transparent;">
+                                        <li class="list-group-item text-center" style="background:black !important;">
+                                            <a href="{% url 'buy_now' product.id %}"
+                                               class="btn btn-dark btn-lg active text-center"
+                                               style="font-size:15px;" role="button"
+                                               aria-pressed="true"> Buy Now
+                                            </a>
+                                            <div style="list-style-type:none"><br></div>
+                                            <a href="{% url 'add_to_cart' product.id %}" s
+                                               class="btn btn-secondary btn-lg active text-center"
+                                               style="font-size:15px;"
+                                               role="button"
+                                               aria-pressed="true">Add to cart
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+
+</body>
+</html>

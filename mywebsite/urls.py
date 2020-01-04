@@ -14,7 +14,7 @@ from posts.views import (
 )
 from products.views import products_view, ProductDetailView
 from register.views import register_view, profile, preference
-from homepage.views import filter_block_one_books
+from homepage.views import filter_block_one_books, search_function
 
 
 urlpatterns = [
@@ -23,6 +23,8 @@ urlpatterns = [
     path('products/', products_view, name='products'),
     path('products/<int:pk>/', ProductDetailView.as_view(), name='product-detail'),
     path('products/<filter>/', filter_block_one_books, name='filter'),
+    path('search/', search_function, name='search_function'),
+
     # Cart / Order / Buy now
     path('cart/', cart_view, name='cart'),
     path('orders/', all_orders, name='orders'),

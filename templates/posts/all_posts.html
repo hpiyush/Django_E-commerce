@@ -9,7 +9,7 @@
 <div>
     {% for post in posts %}
     <h3><a href="{% url 'post-detail' post.id %}" style="color:white; text-decoration:none;">{{ post.title }}</a></h3>
-        <br><p>    by {{ post.author }}</p>
+        <br><pre>    by {{ post.author }}</pre>
     {% endfor %}
 
 </div>

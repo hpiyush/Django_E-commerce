@@ -18,6 +18,7 @@ class PostDetailView(DetailView):
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
+#     pass
     model = Post
     fields = ['title', 'content']
 

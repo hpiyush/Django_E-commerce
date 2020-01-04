@@ -54,9 +54,6 @@ def profile(request):
 
 @login_required
 def preference(request):
-    ls = list(range(0,30))
-    context = {
-        'ls': ls
-    }
+    pass
 #
-#     return render(request, 'preferences.html', context)
+    return render(request, 'preferences.html', context)
