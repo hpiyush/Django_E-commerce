@@ -7,11 +7,22 @@
 {% block navbar %}
 {% endblock navbar %}
 <div>
-    {% for post in posts %}
-    <h3><a href="{% url 'post-detail' post.id %}" style="color:white; text-decoration:none;">{{ post.title }}</a></h3>
-        <br><pre>    by {{ post.author }}</pre>
-    {% endfor %}
-
+    {% if posts %}
+        {% for post in posts %}
+        <h3><a href="{% url 'post-detail' post.id %}" style="color:white; text-decoration:none;">{{ post.title }}</a></h3>
+        <br>
+        <pre>    by {{ post.author }}</pre>
+        {% endfor %}
+    {% else %}
+        <div class="text-center mx-auto">
+            <h4>
+                No posts available.
+            </h4>
+            <small style="margin-top:10px;">
+                <a style="margin:10px;" href="{% url 'post_create' %}">Create the first post?</a>
+            </small>
+        </div>
+    {% endif %}
 </div>
 
 {% if is_paginated %}
