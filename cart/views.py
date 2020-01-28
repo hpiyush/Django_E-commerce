@@ -63,13 +63,8 @@ def add_to_cart(request, item_id):
     order_item, status = CartItem.objects.get_or_create(cart=cart[0], product=product)
     order_item.quantity += 1
     order_item.save()
-    print(order_item.quantity)
-    print(order_item.product)
-    # order_item, status = CartItem.objects.get_or_create(cart=cart[0], product=product)
-    # order_item.items.add(order_item)
-    # if status:
-    #     user_order.ref_code = generate_order_id()
-    #     user_order.save()
+    # print(order_item.quantity)
+    # print(order_item.product)
     messages.warning(request, 'Item added to cart')
     return redirect(reverse(products_view))
 
@@ -115,7 +110,6 @@ def order_success(request):
         payment_id = request.POST['razorpay_payment_id']
         order_id = request.POST['razorpay_order_id']
         signature = request.POST['razorpay_signature']
-        # client = razorpay.Client(auth=("rzp_live_gAQ37jBR7HXali", "T5BfbYExxTwnNjlA95wYqviI"))
         client = razorpay.Client(auth=("rzp_test_############", "SJ####dncV8t###M3"))
         verify_details = {
             'razorpay_order_id': order_id,
