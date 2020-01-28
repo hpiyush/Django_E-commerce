@@ -6,14 +6,6 @@
 
 {% block navbar %}
 {% endblock navbar %}
-<!--<div class="container">-->
-<!--    <div class="jumbotron">-->
-<!--        <form method="post">{% csrf_token %}-->
-<!--            {{ form.as_p }}-->
-<!--            <button type="submit" class="btn btn-danger">Donate</button>-->
-<!--        </form>-->
-<!--    </div>-->
-<!--</div>-->
 
 <div class="container text-center">
     <div class="jumbotron" style="background:transparent">
@@ -44,11 +36,10 @@
 <div class="mx-auto text-center">
         <form action="http://chostore.herokuapp.com/order_event/" method="POST">
 <!--    <form action="http://127.0.0.1:8000/order_event/" method="POST">-->
-<!--        <form action="http://2490d72a.ngrok.io/orders/" method="POST">-->
         {% csrf_token %}
         <script
                 src="https://checkout.razorpay.com/v1/checkout.js"
-                data-key="rzp_test_yOE6xZdXk9blro"
+                data-key="rzp_test_#############"
                 data-amount="{{ razor_price }}"
                 data-currency="INR"
                 data-order_id="{{ order_id }}"

@@ -28,8 +28,7 @@ def cart_view(request):
         total_per = [i.product.price * i.quantity for i in order]
         total = sum(total_per)
         if total > 1:
-            client = razorpay.Client(auth=("rzp_test_yOE6xZdXk9blro", "XaelrBigfUUAheUIfacV8tM3"))
-            # client = razorpay.Client(auth=("rzp_live_gAQ37jBR7HXali", "T5BfbYExxTwnNjlA95wYqviI"))
+            client = razorpay.Client(auth=("rzp_test_###########", "#############"))
             client.set_app_details({"title": "DjangoProject", "version": "0.1"})
             DATA = {
                 'amount': float(total * 100),
@@ -90,7 +89,7 @@ def buy_now(request, id):
     if status:
         order.ref_code = generate_order_id()
         order.save()
-    client = razorpay.Client(auth=("rzp_test_yOE6xZdXk9blro", "XaelrBigfUUAheUIfacV8tM3"))
+    client = razorpay.Client(auth=("rzp_test_##############", "sefweWe#########M3"))
     client.set_app_details({"title": "Django-Project", "version": "0.1"})
     DATA = {
         'amount': product.price * 100,
@@ -117,7 +116,7 @@ def order_success(request):
         order_id = request.POST['razorpay_order_id']
         signature = request.POST['razorpay_signature']
         # client = razorpay.Client(auth=("rzp_live_gAQ37jBR7HXali", "T5BfbYExxTwnNjlA95wYqviI"))
-        client = razorpay.Client(auth=("rzp_test_yOE6xZdXk9blro", "XaelrBigfUUAheUIfacV8tM3"))
+        client = razorpay.Client(auth=("rzp_test_############", "SJ####dncV8t###M3"))
         verify_details = {
             'razorpay_order_id': order_id,
             'razorpay_payment_id': payment_id,
